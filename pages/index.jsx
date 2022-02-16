@@ -1,24 +1,21 @@
 import { getAllPosts } from '@/lib/posts'
+import Articles from '@/components/Articles'
 
 const Home = ({ posts }) => {
-  return (
-    <>
-      <h1>Posts</h1>
-      <ul>
-        {posts.map(post => (
-          <li key={post.slug}>{post.meta.title}</li>
-        ))}
-      </ul>
-    </>
-  )
+    return (
+        <>
+            <h1>Articles</h1>
+            <Articles posts={posts} />
+        </>
+    )
 }
 
 export async function getStaticProps() {
-  const posts = getAllPosts()
+    const posts = getAllPosts()
 
-  return {
-    props: { posts },
-  }
+    return {
+        props: { posts },
+    }
 }
 
 export default Home

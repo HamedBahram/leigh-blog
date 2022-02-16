@@ -179,11 +179,7 @@ In this last example we will start with an array of nested arrays, and reduce it
 If the current element is an `Array`, it means we must reduce it until we arrive at at an element that can be appended to the end of the array we are producing. The _initial_ value of our inner reduce call is the _current_ accumulator value.
 
 ```js
-const folders = [
-  'index.js',
-  ['flatten.js', 'map.js'],
-  ['any.js', ['all.js', 'count.js']],
-]
+const folders = ['index.js', ['flatten.js', 'map.js'], ['any.js', ['all.js', 'count.js']]]
 
 function flatten(acc, element) {
   if (Array.isArray(element)) {
